@@ -1,0 +1,70 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-black: #000000;
+  --secondary-black: #343434;
+  --third-black: #292929;
+  --fourth-black: #404040;
+  --fifth-black: #4b4b4b;
+  --sixth-black: #3e3e3e;
+  --main-gray: #9E9E9E;
+  --main-yellow: #ffd83b;
+  --secondary-yellow: #fecf01;
+  --main-blue: #099ce8;
+  --secondary-blue: #c5dcff;
+  --secondary-blue-active: #6ba6ff;
+  --main-purple: #7553ff;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  top: 0;
+  left: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  line-height: 1;
+  font-size: 16px;
+  color: #000;
+  font-family: "Open Sans", sans-serif;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1048px;
+  margin: 0 auto;
+}
