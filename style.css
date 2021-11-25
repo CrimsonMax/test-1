@@ -9,6 +9,7 @@
 
 :root {
   --main-black: #000000;
+  --main-white: #ffffff;
   --secondary-black: #343434;
   --third-black: #292929;
   --fourth-black: #404040;
@@ -35,13 +36,6 @@ li {
   list-style: none;
 }
 
-img {
-  vertical-align: top;
-  max-width: 100%;
-  top: 0;
-  left: 0;
-}
-
 h1,
 h2,
 h3,
@@ -56,10 +50,10 @@ html,
 body {
   height: 100%;
   font-size: 16px;
-  color: #000;
+  color: var(--main-black);
   font-family: "Open Sans", sans-serif;
   line-height: 20px;
-  background-color: var(--background-color);
+  background-color: var(--main-white);
 }
 
 .wrapper {
@@ -68,32 +62,160 @@ body {
 }
 
 .container {
-  max-width: 1048px;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 .block {
-  max-width: 1100px;
+  width: 1070px;
   height: 370px;
   display: flex;
   border: 0.3px solid var(--border-gray);
   border-radius: 16px;
   overflow: hidden;
+  margin: 60px;
 }
 
 .block-img {
-  max-width: 470;
+  width: 470px;
+}
+
+.block::before {
+  content: "НОВИНКА";
+  height: 45px;
+  background-color: var(--main-blue);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 35px;
+  top: 105px;
+  color: var(--main-white);
+  font-size: 16px;
 }
 
 .block-img > img {
-  width: 100%;
   height: 100%;
+  width: 100%;
 }
 
 .block-info {
-  max-width: 640px;
+  width: 600px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  padding: 0 17px;
+  padding: 16px 24px 0;
+}
+
+.info-header {
+  width: 530px;
+  font-size: 26px;
+  line-height: 34px;
+}
+
+.info-time {
+  padding: 10px 0;
+}
+
+.info-time,
+.icon-Clock {
+  color: var(--main-gray);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.icon-Clock::before {
+  padding-right: 6px;
+  position: relative;
+  top: 1px;
+}
+
+.info-list {
+  font-size: 18px;
+  line-height: 20px;
+  color: var(--secondary-black);
+}
+
+.list-item:not(:last-child) {
+  padding-bottom: 10px;
+}
+
+.icon-Check::before {
+  padding-right: 14px;
+  font-size: 10px;
+  color: var(--secondary-yellow);
+  position: relative;
+  bottom: 2px;
+  font-weight: 600;
+}
+
+.li-time {
+}
+
+.time-choose:not(:last-child) {
+  margin-right: 6px;
+}
+
+.time-choose {
+  width: 73px;
+  height: 28px;
+  color: var(--secondary-black);
+  background-color: var(--secondary-blue);
+  border-radius: 11px;
+  font-size: 18px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.time-choose.active {
+  color: var(--main-white);
+  background-color: var(--secondary-blue-active);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.info-footer {
+  display: flex;
+  height: 50px;
+  margin-top: 24px;
+}
+
+.footer-price {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.price-main {
+  font-size: 36px;
+  line-height: 20px;
+}
+
+.price-main > .icon-Rubl {
+  font-size: 26px;
+  padding-left: 8px;
+  position: relative;
+  bottom: 1px;
+}
+
+.price-second {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.price-second > .icon-Rubl {
+  font-size: 10px;
+  padding-left: 4px;
+  position: relative;
+  bottom: 1px;
+}
+
+.footer-button {
+  margin-left: 14px;
+  width: 187px;
+  height: 52px;
+  background-color: var(--main-yellow);
+  font-size: 18px;
+  line-height: 20px;
+  border-radius: 23px;
+  cursor: pointer;
 }
