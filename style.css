@@ -21,6 +21,7 @@
   --main-blue: #099ce8;
   --secondary-blue: #c5dcff;
   --secondary-blue-active: #6ba6ff;
+  --third-blue: #d9e8ff;
   --main-purple: #7553ff;
   --border-gray: #828282;
   --background-color: #e5e5e5;
@@ -56,6 +57,14 @@ body {
   background-color: var(--main-white);
 }
 
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
 .wrapper {
   min-height: 100%;
   overflow: hidden;
@@ -64,24 +73,25 @@ body {
 .container {
   margin: 0 auto;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .block {
-  width: 1070px;
   height: 370px;
   display: flex;
   border: 0.3px solid var(--border-gray);
   border-radius: 16px;
   overflow: hidden;
-  margin: 60px;
+  margin-bottom: 60px;
 }
 
 .block-img {
   width: 470px;
+  position: relative;
 }
 
-.block::before {
+.label-1::before {
   content: "НОВИНКА";
   height: 45px;
   background-color: var(--main-blue);
@@ -90,9 +100,40 @@ body {
   justify-content: center;
   align-items: center;
   padding: 0 35px;
-  top: 105px;
+  top: 45px;
   color: var(--main-white);
   font-size: 16px;
+  font-weight: 600;
+}
+
+.label-2::before {
+  content: "КРУГЛЫЙ ГОД";
+  height: 45px;
+  background-color: var(--main-yellow);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 35px;
+  top: 60px;
+  color: var(--secondary-black);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.label-3::before {
+  content: "НОВИНКА";
+  height: 45px;
+  background-color: var(--main-purple);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 35px;
+  color: var(--secondary-black);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--main-white);
 }
 
 .block-img > img {
@@ -101,7 +142,6 @@ body {
 }
 
 .block-info {
-  width: 600px;
   display: flex;
   flex-direction: column;
   padding: 16px 24px 0;
@@ -164,7 +204,6 @@ body {
   border-radius: 11px;
   font-size: 18px;
   line-height: 20px;
-  cursor: pointer;
 }
 
 .time-choose.active {
@@ -217,5 +256,92 @@ body {
   font-size: 18px;
   line-height: 20px;
   border-radius: 23px;
-  cursor: pointer;
+}
+
+@media (max-width: 1110px) {
+  .block {
+    width: 345px;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  .block-img {
+    height: 284px;
+    width: 345px;
+  }
+
+  .block-info {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 14px 0;
+  }
+
+  .info-time {
+    order: -1;
+  }
+
+  .info-header {
+    width: 315px;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--fourth-black);
+  }
+
+  .info-list {
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--fifth-black);
+  }
+
+  .time-choose {
+    width: 63px;
+    height: 24px;
+    color: var(--secondary-black);
+    background-color: var(--third-blue);
+    border-radius: 11px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .li-time {
+    display: flex;
+    margin-top: 7px;
+    justify-content: flex-end;
+  }
+
+  .info-footer {
+    height: 44px;
+    margin-top: 35px;
+    margin-bottom: 19px;
+    justify-content: space-between;
+  }
+  
+  .price-main {
+    font-size: 30px;
+  }
+  
+  .price-main > .icon-Rubl {
+    font-size: 22px;
+    padding-left: 6px;
+  }
+  
+  .price-second {
+    font-size: 10px;
+  }
+  
+  .price-second > .icon-Rubl {
+    font-size: 6px;
+    padding-left: 2px;
+  }
+  
+  .footer-button {
+    margin-left: 14px;
+    width: 165px;
+    height: 44px;
+    background-color: var(--main-yellow);
+    font-size: 14px;
+    border-radius: 20px;
+  }
 }
